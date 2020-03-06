@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
+import USCurrencyFormat from '../Utils/USCurrencyFormat';
 
 class Summary extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
   getSummary = () => {
     return Object.keys(this.props.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
@@ -20,7 +12,7 @@ class Summary extends Component {
           <div className="summary__option__label">{feature} </div>
           <div className="summary__option__value">{selectedOption.name}</div>
           <div className="summary__option__cost">
-            {this.USCurrencyFormat.format(selectedOption.cost)}
+            {USCurrencyFormat.format(selectedOption.cost)}
           </div>
         </div>
       );

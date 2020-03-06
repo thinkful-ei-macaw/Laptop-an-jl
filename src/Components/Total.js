@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import USCurrencyFormat from '../Utils/USCurrencyFormat';
 
 class Total extends Component {
   getTotal = () => {
@@ -8,17 +9,12 @@ class Total extends Component {
     );
   };
 
-  USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
   render() {
     return (
       <div className="summary__total">
         <div className="summary__total__label">Total</div>
         <div className="summary__total__value">
-          {this.USCurrencyFormat.format(this.getTotal())}
+          {USCurrencyFormat.format(this.getTotal())}
         </div>
       </div>
     );

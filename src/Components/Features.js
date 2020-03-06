@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import slugify from 'slugify';
+import USCurrencyFormat from '../Utils/USCurrencyFormat';
 
 class Features extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
-
   generateFeatures = () => {
     return Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
@@ -27,7 +19,7 @@ class Features extends Component {
               onChange={e => this.props.onUpdateFeature(feature, item)}
             />
             <label htmlFor={itemHash} className="feature__label">
-              {item.name} ({this.USCurrencyFormat.format(item.cost)})
+              {item.name} ({USCurrencyFormat.format(item.cost)})
             </label>
           </div>
         );
