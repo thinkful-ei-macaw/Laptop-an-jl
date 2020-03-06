@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Features from './Components/Features';
+import FeaturesForm from './Components/FeaturesForm';
 import Summary from './Components/Summary';
 import Total from './Components/Total';
 
@@ -41,14 +41,11 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <Features
-              features={this.props.features}
-              selected={this.state.selected}
-              onUpdateFeature={this.updateFeature}
-            />
-          </form>
+          <FeaturesForm
+            features={this.props.features}
+            selected={this.state.selected}
+            onUpdateFeature={this.updateFeature}
+          />
           <section className="main__summary">
             <h2>Your cart</h2>
             <Summary selected={this.state.selected} />
