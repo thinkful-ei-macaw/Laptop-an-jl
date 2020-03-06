@@ -43,6 +43,8 @@ class App extends Component {
     });
   };
 
+  // <Features features={prop.features} />
+
   render() {
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
