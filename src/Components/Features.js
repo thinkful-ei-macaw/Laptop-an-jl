@@ -4,9 +4,6 @@ import slugify from 'slugify';
 class Features extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: this.props.selected,
-    };
   }
 
   USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -26,8 +23,8 @@ class Features extends Component {
               id={itemHash}
               className="feature__option"
               name={slugify(feature)}
-              checked={item.name === this.state.selected[feature].name}
-              onChange={e => this.props.onUpdateFeature(item)}
+              checked={item.name === this.props.selected[feature].name}
+              onChange={e => this.props.onUpdateFeature(feature, item)}
             />
             <label htmlFor={itemHash} className="feature__label">
               {item.name} ({this.USCurrencyFormat.format(item.cost)})
