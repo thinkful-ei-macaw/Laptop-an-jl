@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FeaturesForm from './Components/FeaturesForm';
-import MainSummary from './Components/MainSummary'
+import MainSummary from './Components/MainSummary';
 
 class App extends Component {
   state = {
@@ -45,9 +45,7 @@ class App extends Component {
             selected={this.state.selected}
             onUpdateFeature={this.updateFeature}
           />
-          <MainSummary 
-            selected={this.state.selected}
-          />
+          <MainSummary selected={this.state.selected} />
         </main>
       </div>
     );
