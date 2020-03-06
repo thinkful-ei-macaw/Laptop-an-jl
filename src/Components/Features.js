@@ -36,14 +36,7 @@ class Features extends Component {
     });
   };
   render() {
-    return (
-      <fieldset className="feature" key={this.featureHash}>
-        <legend className="feature__name">
-          <h3>{this.generateFeatures()}</h3>
-        </legend>
-        {this.options}
-      </fieldset>
-    );
+    return <>{this.generateFeatures()}</>;
   }
 }
 export default Features;
