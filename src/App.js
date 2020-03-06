@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FeaturesForm from './Components/FeaturesForm';
-import Summary from './Components/Summary';
-import Total from './Components/Total';
+import MainSummary from './Components/MainSummary'
 
 class App extends Component {
   state = {
@@ -46,11 +45,9 @@ class App extends Component {
             selected={this.state.selected}
             onUpdateFeature={this.updateFeature}
           />
-          <section className="main__summary">
-            <h2>Your cart</h2>
-            <Summary selected={this.state.selected} />
-            <Total selected={this.state.selected} />
-          </section>
+          <MainSummary 
+            selected={this.state.selected}
+          />
         </main>
       </div>
     );
